@@ -36,3 +36,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: cd src/backend && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=FiNeX96_TQS_PhiHub
+        run: cd hw1/backend && mvn -B verify jacoco:report org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=FiNeX96_TQS_PhiHub -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
