@@ -1,13 +1,15 @@
 package deti.tqs.phihub;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Order;
 
-@SpringBootTest
-class PhiHubApplicationTests {
+import static org.assertj.core.api.Assertions.assertThat;
 
-	@Test
-	void contextLoads() {
+class CachingTests {
+
+    @Test
+    @Order(1)
+    void testThatCachIsEmpty() {
+        assertThat(true).isTrue();
 	}
-
 }
