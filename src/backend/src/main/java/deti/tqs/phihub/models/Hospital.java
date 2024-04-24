@@ -8,8 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "hospitals")
 public class Hospital {
 
@@ -26,45 +32,4 @@ public class Hospital {
     @OneToMany
     private List<QueueLine> queues;
 
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public List<WaitingRoom> getWaitingRooms() {
-        return waitingRooms;
-    }
-    public void setWaitingRooms(List<WaitingRoom> waitingRooms) {
-        this.waitingRooms = waitingRooms;
-    }
-    public void addWaitingRoom(WaitingRoom waitingRoom) {
-        this.waitingRooms.add(waitingRoom);
-    }
-
-    public List<QueueLine> getQueues() {
-        return queues;
-    }
-    public void setQueues(List<QueueLine> queues) {
-        this.queues = queues;
-    }
-    public void addQueue(QueueLine queue) {
-        this.queues.add(queue);
-    }
 }
