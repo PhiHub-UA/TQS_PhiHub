@@ -8,28 +8,38 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "hospitals")
-public class Hospital {
+@Entity
+@Table(name = "patients")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Personal Info
     private String name;
-    private String location;
+    private String phone;
+    private String email;
+    private Integer age;
+    // Login Info
+    private String username;
+    private String password;
+    // Role Info
+    private List<String> roles;
 
     @OneToMany
-    private List<WaitingRoom> waitingRooms;
+    private List<Bill> bills;
 
     @OneToMany
-    private List<QueueLine> queues;
+    private List<Appointment> oldAppointments;
 
 }

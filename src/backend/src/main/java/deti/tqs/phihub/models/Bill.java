@@ -11,10 +11,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 @Table(name = "bills")
 public class Bill {
 
@@ -23,9 +24,7 @@ public class Bill {
     private Long id;
 
     private Date date;
-    private Double finalPrice;
+    private Double price;
 
-    private String header;
-    private String body;
 
 }

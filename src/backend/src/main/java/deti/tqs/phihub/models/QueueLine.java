@@ -12,10 +12,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 @Table(name = "queues")
 public class QueueLine {
 
@@ -23,9 +24,7 @@ public class QueueLine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String letter;
-    private Integer size;
-    private Integer currentNumber;
+    private Integer maxSize;
 
     @OneToMany
     private Queue<Ticket> tickets;

@@ -13,11 +13,12 @@ import jakarta.persistence.OneToOne;
 
 import java.sql.Date;
 
-@Entity
-@Table(name = "appointments")
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table(name = "appointments")
 public class Appointment {
 
     @Id
@@ -28,9 +29,8 @@ public class Appointment {
     private Double price;
 
     @ManyToOne
-    private Patient patient;
+    private User patient;
 
-    @ManyToOne
     private Speciality speciality;
 
     @OneToOne

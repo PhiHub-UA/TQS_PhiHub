@@ -2,28 +2,29 @@ package deti.tqs.phihub.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.util.List;
 
-@Entity
-@Table(name = "staff")
+
+
 @Getter
 @Setter
 @NoArgsConstructor
-public class Staff {
+@Entity
+@Table(name = "medics")
+public class Medic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    private String phone;
-    private String email;
-    private String password;
-
+    
+    private List<Speciality> specialities;
+    
 }
