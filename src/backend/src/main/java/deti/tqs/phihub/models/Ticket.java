@@ -10,7 +10,14 @@ import jakarta.persistence.OneToOne;
 
 import java.sql.Date;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "tickets")
 public class Ticket {
 
@@ -31,59 +38,4 @@ public class Ticket {
     private Appointment appointment;
 
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getRegisterDate() {
-        return registerDate;
-    }
-    public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public String getQueueLetter() {
-        return queueLetter;
-    }
-    public void setQueueLetter(String queueLetter) {
-        this.queueLetter = queueLetter;
-    }
-
-    public WaitingRoom getWaitingRoom() {
-        return waitingRoom;
-    }
-    public void setWaitingRoom(WaitingRoom waitingRoom) {
-        this.waitingRoom = waitingRoom;
-    }
-
-    public Appointment getAppointment() {
-        return appointment;
-    }
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
-    }
-
-    public boolean isPriority() {
-        return priority;
-    }
-    public void setPriority(boolean priority) {
-        this.priority = priority;
-    }
-    
-    public Double getAddedPrice() {
-        return addedPrice;
-    }
-    public void setAddedPrice(Double addedPrice) {
-        this.addedPrice = addedPrice;
-    }
 }
