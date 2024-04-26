@@ -15,8 +15,6 @@
 
 ## Architecture
 
-![Architecture_Diagram](./reports/arquitetura.jpeg)
-
 <p align="center">
     <img height="400px;" src="docs/diagrams/architecture.png">
 </p>
