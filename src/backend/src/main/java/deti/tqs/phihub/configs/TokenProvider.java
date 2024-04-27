@@ -30,6 +30,7 @@ public class TokenProvider {
     public String validateToken(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(JWT_SECRET);
+            //System.out.println("Token: " + token);
             return JWT.require(algorithm)
                     .build()
                     .verify(token)
