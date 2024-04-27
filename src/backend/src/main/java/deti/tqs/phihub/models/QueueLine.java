@@ -1,7 +1,7 @@
 package deti.tqs.phihub.models;
 
 import jakarta.persistence.Entity;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

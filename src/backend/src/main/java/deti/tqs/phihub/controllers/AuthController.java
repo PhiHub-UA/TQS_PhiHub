@@ -23,7 +23,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import java.util.Map;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("/auth")
 public class AuthController {
 
     private AuthService authService;
