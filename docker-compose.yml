@@ -1,39 +1,37 @@
 
 services:
 
-  frontend:
+  digital-signage:
     build: 
-      context: ./frontend
+      context: ./Digital-Signage
       dockerfile: Dockerfile
-    container_name: 'frontend'
     volumes:
-      - ./frontend:/frontend
+      - ./Digital-Signage:/Digital-Signage
     networks:
       - backend_network
     ports:
       - '3000:80'
     depends_on:
-      - backend
+      - patient-backend
 
-  backend:
+  patient-backend:
     build: 
-      context: ./backend
+      context: ./Patient-Backend
       dockerfile: Dockerfile
-    container_name: 'backend'
     volumes:
-      - ./backend:/backend
+      - ./Patient-Backend:/Patient-Backend
     networks:
       - backend_network
     ports:
       - '8080:8080'
     depends_on:
-      - postgres_db
+      - postgres-db
 
 
-  postgres_db:
+  postgres-db:
     image: postgres:latest
     restart: always
-    hostname: postgres_db
+    hostname: postgres-db
     environment:
         - POSTGRES_USER=phihubDB
         - POSTGRES_PASSWORD=phihubDBpass
