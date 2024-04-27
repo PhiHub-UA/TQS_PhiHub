@@ -49,7 +49,10 @@ public class UserController {
         String loggedinUser = tokenProvider.validateToken(access_token);
 
         // admin can check all users, TODO 
-
+        
+        if (user.getRole().equals("admin")) {
+            return ResponseEntity.ok(user);
+        }
 
         // a user trying to check another user's info, aint no way
         if (!loggedinUser.equals(user.getUsername())) {
