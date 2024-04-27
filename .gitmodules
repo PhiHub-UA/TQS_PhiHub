@@ -1,0 +1,15 @@
+[submodule "digital-signage"]
+	path = digital-signage
+	url = git@github.com:PhiHub-UA/digital-signage.git
+[submodule "staff-frontend"]
+	path = staff-frontend
+	url = git@github.com:PhiHub-UA/staff-frontend.git
+[submodule "staff-backend"]
+	path = staff-backend
+	url = git@github.com:PhiHub-UA/staff-backend.git
+[submodule "patient_frontend"]
+	path = patient_frontend
+	url = git@github.com:PhiHub-UA/patient_frontend.git
+[submodule "patient_backend"]
+	path = patient_backend
+	url = git@github.com:PhiHub-UA/patient_backend.git
