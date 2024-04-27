@@ -14,10 +14,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 @Table(name = "tickets")
 public class Ticket {
 
@@ -36,6 +37,5 @@ public class Ticket {
 
     @OneToOne
     private Appointment appointment;
-
 
 }
