@@ -1,18 +1,19 @@
 
 services:
 
-  staff-frontend:
-    build: 
-      context: ./Staff-Frontend
-      dockerfile: Dockerfile
-    volumes:
-      - ./Staff-Frontend:/Staff-Frontend
-    networks:
-      - backend_network
-    ports:
-      - '3000:3000'
-    depends_on:
-      - patient-backend
+
+#  staff-frontend:
+#    build: 
+#      context: ./Staff-Frontend
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./Staff-Frontend:/Staff-Frontend
+#    networks:
+#      - backend_network
+#    ports:
+#      - '3000:3000'
+#    depends_on:
+#      - patient-backend
       
   patient-frontend:
     build: 
