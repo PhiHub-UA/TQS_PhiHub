@@ -1,6 +1,33 @@
 
 services:
 
+
+#  staff-frontend:
+#    build: 
+#      context: ./Staff-Frontend
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./Staff-Frontend:/Staff-Frontend
+#    networks:
+#      - backend_network
+#    ports:
+#      - '3000:3000'
+#    depends_on:
+#      - patient-backend
+      
+  patient-frontend:
+    build: 
+      context: ./Patient-Frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./Patient-Frontend:/Patient-Frontend
+    networks:
+      - backend_network
+    ports:
+      - '5173:5173'
+    depends_on:
+      - patient-backend
+
   digital-signage:
     build: 
       context: ./Digital-Signage
