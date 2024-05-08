@@ -32,7 +32,8 @@ services:
       context: ./Patient-Frontend
       dockerfile: Dockerfile
     volumes:
-      - ./Patient-Frontend:/Patient-Frontend
+      - ./Patient-Frontend:/app
+      - /app/node_modules
     networks:
       - backend_network
     ports:
@@ -82,11 +83,13 @@ services:
     networks:
       - backend_network
 
-
 volumes:
   postgres_db:
-    driver: local   
+    driver: local
+  exclude:   
 
 networks:
   backend_network:
     driver: bridge
+
+
