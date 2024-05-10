@@ -1,18 +1,19 @@
 
 services:
 
-#  staff-frontend:
-#    build: 
-#      context: ./Staff-Frontend
-#      dockerfile: Dockerfile
-#    volumes:
-#      - ./Staff-Frontend:/Staff-Frontend
-#    networks:
-#      - backend_network
-#    ports:
-#      - '3001:3000'
-#    depends_on:
-#      - patient-backend
+  staff-frontend:
+    build: 
+      context: ./Staff-Frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./Staff-Frontend:/app
+      - /app/node_modules
+    networks:
+      - backend_network
+    ports:
+      - '3000:3000'
+    depends_on:
+      - patient-backend
 
   staff-backend:
     build: 
@@ -32,9 +33,8 @@ services:
       context: ./Patient-Frontend
       dockerfile: Dockerfile
     volumes:
-      - ./Patient-Frontend:/Patient-Frontend
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./Patient-Frontend:/app
+      - /app/node_modules
     networks:
       - backend_network
     ports:
@@ -84,11 +84,13 @@ services:
     networks:
       - backend_network
 
-
 volumes:
   postgres_db:
-    driver: local   
+    driver: local
+  exclude:   
 
 networks:
   backend_network:
     driver: bridge
+
+
