@@ -13,21 +13,8 @@ services:
     ports:
       - '3000:3000'
     depends_on:
-      - patient-backend
+      - backend
 
-  staff-backend:
-    build: 
-      context: ./Staff-Backend
-      dockerfile: Dockerfile
-    volumes:
-      - ./Staff-Backend:/Staff-Backend
-    networks:
-      - backend_network
-    ports:
-      - '8090:8080'
-    depends_on:
-      - postgres-db
-      
   patient-frontend:
     build: 
       context: ./Patient-Frontend
@@ -40,21 +27,8 @@ services:
     ports:
       - '5173:5173'
     depends_on:
-      - patient-backend
-
-  patient-backend:
-    build: 
-      context: ./Patient-Backend
-      dockerfile: Dockerfile
-    volumes:
-      - ./Patient-Backend:/Patient-Backend
-    networks:
-      - backend_network
-    ports:
-      - '8080:8080'
-    depends_on:
-      - postgres-db
-
+      - backend
+  
   digital-signage:
     build: 
       context: ./Digital-Signage
@@ -66,8 +40,20 @@ services:
     ports:
       - '3002:80'
     depends_on:
-      - patient-backend
+      - backend
 
+  backend:
+    build: 
+      context: ./Backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./Backend:/Backend
+    networks:
+      - backend_network
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres-db
 
   postgres-db:
     image: postgres:latest
