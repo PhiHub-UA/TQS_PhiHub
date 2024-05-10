@@ -4,9 +4,9 @@
 [submodule "Staff-Frontend"]
 	path = Staff-Frontend
 	url = git@github.com:PhiHub-UA/Staff-Frontend.git
-[submodule "Patient-Backend"]
-	path = Patient-Backend
-	url = git@github.com:PhiHub-UA/Patient-Backend.git
 [submodule "Patient-Frontend"]
 	path = Patient-Frontend
 	url = git@github.com:PhiHub-UA/Patient-Frontend.git
+[submodule "Backend"]
+	path = Backend
+	url = https://github.com/PhiHub-UA/Backend
