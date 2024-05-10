@@ -33,6 +33,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./Patient-Frontend:/Patient-Frontend
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - backend_network
     ports:
