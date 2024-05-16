@@ -25,7 +25,7 @@
 
 - Project Backlog - [Jira](https://ua-team-n2bc7vdc.atlassian.net/jira/software/projects/PHIH/boards/2?atlOrigin=eyJpIjoiZjAwNmM1NTcwZTZlNGJhMjlhYzgxNTg3NGZlOGFjMWMiLCJwIjoiaiJ9) 
 
-- Static Analysis - [Sonar Cloud](https://sonarcloud.io/summary/new_code?id=FiNeX96_TQS_PhiHub&branch=dev)
+- Static Analysis - [Sonar Cloud](https://sonarcloud.io/summary/overall?id=PhiHub-UA_Patient-Backend)
 
 - Product Specification Report: [PhiHub - Google Docs](https://docs.google.com/document/d/1YBmS7e0aVOPJ0aEdWH9sRwEJVAxUyuLt/edit)
 
