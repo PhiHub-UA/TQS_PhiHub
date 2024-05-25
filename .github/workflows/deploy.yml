@@ -145,7 +145,6 @@ jobs:
     steps:
     - name: "Checkout"
       uses: actions/checkout@v4
-      
     - name: "Deploy"
       run: |
           echo "CREATE DATABASE phihub;" > init.sql
