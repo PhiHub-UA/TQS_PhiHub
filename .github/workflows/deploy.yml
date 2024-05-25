@@ -140,6 +140,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     name: "Deploy to VM"
+    needs: [build-backend-image, build-signage-image, build-staff-image, build-patient-image]
 
     steps:
     - name: "Checkout"
