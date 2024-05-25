@@ -148,8 +148,9 @@ jobs:
 
     - name: "Deploy"
       run: |
-          docker compose -f docker-compose.prod.yml down --rmi all
           echo "CREATE DATABASE phihub;" > init.sql
-          docker compose -f docker-compose.prod.yml up
-
-
+          docker compose -f docker-compose.prod.yml pull
+          docker compose -f compose.prod.yml up -d --remove-orphans
+          docker container prune -f
+          docker image prune -af
+          docker builder prune -af
