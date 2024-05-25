@@ -1,0 +1,68 @@
+
+services:
+
+  staff-frontend:
+    image: pramos16/phihub-staff:latest
+    volumes:
+      - /app/node_modules
+    networks:
+      - backend_network
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+      
+  patient-frontend:
+    image: pramos16/phihub-patient:latest
+    volumes:
+      - /app/node_modules
+    networks:
+      - backend_network
+    ports:
+      - '3001:5173'
+    depends_on:
+      - backend
+  
+  digital-signage:
+    image: pramos16/phihub-signage:latest
+    networks:
+      - backend_network
+    ports:
+      - '3002:80'
+    depends_on:
+      - backend
+
+  backend:
+    image: pramos16/phihub-backend:latest
+    networks:
+      - backend_network
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    image: postgres:latest
+    restart: always
+    hostname: postgres-db
+    environment:
+        - POSTGRES_USER=phihubDB
+        - POSTGRES_PASSWORD=phihubDBpass
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+volumes:
+  postgres_db:
+    driver: local
+  exclude:   
+
+networks:
+  backend_network:
+    driver: bridge
+
+
