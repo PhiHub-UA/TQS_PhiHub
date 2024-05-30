@@ -20,7 +20,7 @@ services:
     networks:
       - backend_network
     ports:
-      - '80:5173'
+      - '3001:5173'
     depends_on:
       - backend
   
@@ -35,6 +35,7 @@ services:
 
   backend:
     image: pramos16/phihub-backend:latest
+    hostname: "phihub-backend"
     networks:
       - backend_network
     ports:
