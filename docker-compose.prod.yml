@@ -20,7 +20,7 @@ services:
     networks:
       - backend_network
     ports:
-      - '3001:5173'
+      - '80:5173'
     depends_on:
       - backend
   
