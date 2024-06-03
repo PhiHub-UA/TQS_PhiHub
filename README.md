@@ -19,6 +19,14 @@
     <img height="400px;" src="docs/diagrams/architecture.png">
 </p>
 
+## Ports
+
+- Staff Frontend : 3000
+- Patient Frontend : 80
+- Digital Signage : 3002
+- Backend : 8080
+
+
 ## Project Bookmarks: 
 
 - API Documentation: 
