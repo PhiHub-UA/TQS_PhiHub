@@ -26,7 +26,6 @@
 - Digital Signage : 3002
 - Backend : 8080
 
-
 ## Project Bookmarks: 
 
 - API Documentation: 
